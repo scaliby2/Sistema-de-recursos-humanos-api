@@ -16,8 +16,8 @@ import java.util.Map;
 @RestController
 // @RequestMapping: Los endpoints estarán disponibles bajo la URL base: http://localhost:8080/rh-app/
 @RequestMapping("rh-app")
-// @CrossOrigin: Permite solicitudes CORS (Cross-Origin Resource Sharing) desde http://localhost:3000
-@CrossOrigin(value = "http://localhost:3000")
+// @CrossOrigin: Permite solicitudes CORS (Cross-Origin Resource Sharing) desde http://localhost:3001
+@CrossOrigin(value = "http://localhost:3001")
 public class EmpleadoControllador {
     private static final Logger logger =
             LoggerFactory.getLogger(EmpleadoControllador.class);
