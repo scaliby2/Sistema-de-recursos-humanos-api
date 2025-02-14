@@ -16,8 +16,9 @@ import java.util.Map;
 @RestController
 // @RequestMapping: Los endpoints estarán disponibles bajo la URL base: http://localhost:8080/rh-app/
 @RequestMapping("rh-app")
-// @CrossOrigin: Permite solicitudes CORS (Cross-Origin Resource Sharing) desde http://localhost:3000
-@CrossOrigin(value = "http://localhost:3000")
+// @CrossOrigin: Permite solicitudes CORS (Cross-Origin Resource Sharing) desde http://localhost:3001
+@CrossOrigin(value = "http://localhost:3001")
+
 public class EmpleadoControllador {
     private static final Logger logger =
             LoggerFactory.getLogger(EmpleadoControllador.class);
@@ -40,11 +41,11 @@ public class EmpleadoControllador {
     @GetMapping("/empleados/{id}")
     public ResponseEntity<Empleado>
     obtenerEmpleado(@PathVariable Integer id) {
-      Empleado empleado =  empleadoServicio.BuscarEmpleadoId(id);
-      if(empleado == null) {
-          throw new RecursoNoEncontradoExcep("No se encontro el Id" +id );
-      }
-      return ResponseEntity.ok(empleado);
+        Empleado empleado =  empleadoServicio.BuscarEmpleadoId(id);
+        if(empleado == null) {
+            throw new RecursoNoEncontradoExcep("No se encontro el Id" +id );
+        }
+        return ResponseEntity.ok(empleado);
     }
 
 
